@@ -28,8 +28,7 @@ def draw():
           screen.draw.text(f"You got {score} babka!!!", center=(400,340), fontsize=60)
       else:
             screen.draw.text(f"You got {score} babkas!!!", center=(300,340), fontsize=60)
-      screen.draw.filled_rect(Rect((500, 10), (80, 40)), (50, 168, 82))
-      screen.draw.text("Restart", center=(540, 30), fontsize=30)
+
 def place_babka():
     global speed
     babka.x = random.randint(0, WIDTH)
@@ -54,15 +53,17 @@ def update():
     babka.y = babka.y + speed
     if babka.y > HEIGHT:
         place_babka()
+    if keyboard.R:
+        reset_game()
+    if keyboard.ESCAPE:
+        exit()
 
 def on_mouse_down(pos):
     global score
     if babka.collidepoint(pos):
         score = score + 1
         place_babka()
-    if game_over and Rect((500, 10), (80, 40)).collidepoint(pos):
-      reset_game()
-      return
+
 def update_timer():
     global time_remaining, game_over
     time_remaining -= 1
