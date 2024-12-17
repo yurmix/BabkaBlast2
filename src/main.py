@@ -32,7 +32,7 @@ def place_babka():
     global speed
     babka.x = random.randint(0, WIDTH)
     babka.y = 0
-    speed = speed + 0.1
+    speed = speed + 0.2
 
 def time_up():
    global game_over
