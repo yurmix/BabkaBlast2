@@ -70,7 +70,7 @@ def update_timer():
     if time_remaining <= 0:
         game_over = True
 
-clock.schedule(time_up, 60.0)
+clock.schedule(time_up, time_remaining)
 clock.schedule_interval(update_timer, 1.0)
 place_babka()
 
