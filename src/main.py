@@ -1,7 +1,7 @@
 import pgzrun
 import random
 import time
-speed = 0.5
+speed = 1.0
 score = 0
 game_over = False
 time_remaining = 60.0
@@ -17,12 +17,12 @@ babka.pos = (WIDTH/2, HEIGHT/2)  # Center the actor
 
 def draw():
     screen.clear()
-    screen.fill((53,81,92))
+    screen.fill((125,249,255))
     babka.draw()
     screen.draw.text(f"Score: {score}", topleft=(10,10), fontsize=60)
     screen.draw.text(f"Time: {int(time_remaining)}", topleft=(400, 10), fontsize=60)
     if game_over == True:
-      screen.fill((53,81,92))
+      screen.fill((125,249,255))
       screen.draw.text("Game Over", center=(300,300), fontsize=60)
       if score == 1:
           screen.draw.text(f"You got {score} babka!!!", center=(400,340), fontsize=60)
