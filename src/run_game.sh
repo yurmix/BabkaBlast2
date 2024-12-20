@@ -1,3 +1,3 @@
 #!/bin/bash
-cd src
+cd "$(dirname "$0")"
 pgzrun main.py
