@@ -33,7 +33,7 @@ jobs:
     - name: Build Pygame Project
       run: |
         mkdir -p build
-        pygbag --no-cdn --archive ./src
+        pygbag --archive ./src
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
